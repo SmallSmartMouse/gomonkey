@@ -3,8 +3,8 @@ package dsl_test
 import (
 	"testing"
 
-	. "github.com/agiledragon/gomonkey/v2"
-	. "github.com/agiledragon/gomonkey/v2/dsl"
+	. "github.com/SmallSmartMouse/gomonkey/v2"
+	. "github.com/SmallSmartMouse/gomonkey/v2/dsl"
 	. "github.com/smartystreets/goconvey/convey"
 )
 

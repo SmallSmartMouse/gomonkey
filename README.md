@@ -34,11 +34,11 @@ gomonkey is a library to make monkey patching in unit tests easy, and the core i
 ## Installation
 - below v2.1.0, for example v2.0.2
 ```go
-$ go get github.com/agiledragon/gomonkey@v2.0.2
+$ go get github.com/SmallSmartMouse/gomonkey@v2.0.2
 ```
 - v2.1.0 and above, for example v2.2.0
 ```go
-$ go get github.com/agiledragon/gomonkey/v2@v2.2.0
+$ go get github.com/SmallSmartMouse/gomonkey/v2@v2.2.0
 ```
 
 ## Test Method
