@@ -16,7 +16,7 @@ var (
 func TestApplyFunc(t *testing.T) {
 	Convey("TestApplyFunc", t, func() {
 
-		Convey("one func for succ", func() {
+		{
 			patches := ApplyFunc(fake.Exec, func(_ string, _ ...string) (string, error) {
 				return outputExpect, nil
 			})
@@ -24,9 +24,9 @@ func TestApplyFunc(t *testing.T) {
 			output, err := fake.Exec("", "")
 			So(err, ShouldEqual, nil)
 			So(output, ShouldEqual, outputExpect)
-		})
+		}
 
-		Convey("one func for fail", func() {
+		{
 			patches := ApplyFunc(fake.Exec, func(_ string, _ ...string) (string, error) {
 				return "", fake.ErrActual
 			})
@@ -34,9 +34,9 @@ func TestApplyFunc(t *testing.T) {
 			output, err := fake.Exec("", "")
 			So(err, ShouldEqual, fake.ErrActual)
 			So(output, ShouldEqual, "")
-		})
+		}
 
-		Convey("two funcs", func() {
+		{
 			patches := ApplyFunc(fake.Exec, func(_ string, _ ...string) (string, error) {
 				return outputExpect, nil
 			})
@@ -49,9 +49,9 @@ func TestApplyFunc(t *testing.T) {
 			So(output, ShouldEqual, outputExpect)
 			flag := fake.Belong("", nil)
 			So(flag, ShouldBeTrue)
-		})
+		}
 
-		Convey("input and output param", func() {
+		{
 			patches := ApplyFunc(json.Unmarshal, func(data []byte, v interface{}) error {
 				if data == nil {
 					panic("input param is nil!")
@@ -68,6 +68,6 @@ func TestApplyFunc(t *testing.T) {
 			So(err, ShouldEqual, nil)
 			So(m[1], ShouldEqual, 2)
 			So(m[2], ShouldEqual, 4)
-		})
+		}
 	})
 }
