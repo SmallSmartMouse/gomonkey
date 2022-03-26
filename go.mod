@@ -1,4 +1,4 @@
-module github.com/SmallSmartMouse/gomonkey/v3
+module github.com/SmallSmartMouse/gomonkey
 
 go 1.14
 

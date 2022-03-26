@@ -1,6 +1,6 @@
 package dsl
 
-import . "github.com/SmallSmartMouse/gomonkey/v2"
+import . "github.com/SmallSmartMouse/gomonkey"
 
 func Any() Constraint {
 	return &AnyConstraint{}

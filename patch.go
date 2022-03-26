@@ -2,7 +2,7 @@ package gomonkey
 
 import (
 	"fmt"
-	"github.com/SmallSmartMouse/gomonkey/v2/creflect"
+	"github.com/SmallSmartMouse/gomonkey/creflect"
 	"reflect"
 	"syscall"
 	"unsafe"
