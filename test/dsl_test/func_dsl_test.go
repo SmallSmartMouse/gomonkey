@@ -1,6 +1,7 @@
 package dsl_test
 
 import (
+	"github.com/SmallSmartMouse/gomonkey/v2/test/fake"
 	"testing"
 
 	. "github.com/SmallSmartMouse/gomonkey/v2"
@@ -17,14 +18,14 @@ func TestPbBuilderFunc(t *testing.T) {
 			patchBuilder := NewPatchBuilder(patches)
 
 			patchBuilder.
-				Func(Belong).
+				Func(fake.Belong).
 				Stubs().
 				With(Eq("zxl"), Any()).
 				Will(Return(true)).
 				Then(Repeat(Return(false), 2)).
 				End()
 
-			flag := Belong("zxl", []string{})
+			flag := fake.Belong("zxl", []string{})
 			So(flag, ShouldBeTrue)
 
 			defer func() {
@@ -34,7 +35,7 @@ func TestPbBuilderFunc(t *testing.T) {
 					So(str, ShouldEqual, "input paras ddd is not matched")
 				}
 			}()
-			Belong("ddd", []string{"abc"})
+			fake.Belong("ddd", []string{"abc"})
 		})
 
 	})
